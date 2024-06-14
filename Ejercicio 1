@@ -1,0 +1,13 @@
+from scipy.optimize import newton
+import math
+
+def fprime(x):
+return -3*x**2 + math.sin(x)
+p1 = newton(func = lambda x : -x**3 - math.cos(x), x0 = -1, fprime = fprime)
+print(p1)
+
+p1 = newton(func = lambda x : -x**3 - math.cos(x), x0 = -1)
+print(p1)
+
+p1 = newton(func = lambda x : -x**3 - math.cos(x), x0 = 0)
+print(p1)

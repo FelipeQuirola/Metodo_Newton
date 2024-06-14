@@ -1,0 +1,18 @@
+#Literal a
+p1 = newton(func = lambda x : math.log(x**2 + 1) - math.exp(0.4*x)*math.cos(math.pi*x),
+            x0 = -0.4, tol = 10e-6)
+print(p1)
+
+#Literal b
+p1 = newton(func = lambda x : math.log(x**2 + 1) - math.exp(0.4*x)*math.cos(math.pi*x),
+            x0 = 0.5, tol = 10e-6)
+print(p1)
+p1 = newton(func = lambda x : math.log(x**2 + 1) - math.exp(0.4*x)*math.cos(math.pi*x),
+            x0 = 1.5, tol = 10e-6)
+print(p1)
+p1 = newton(func = lambda x : math.log(x**2 + 1) - math.exp(0.4*x)*math.cos(math.pi*x),
+            x0 = 2.5, tol = 10e-6)
+print(p1)
+p1 = newton(func = lambda x : math.log(x**2 + 1) - math.exp(0.4*x)*math.cos(math.pi*x),
+            x0 = 3.5, tol = 10e-6)
+print(p1)

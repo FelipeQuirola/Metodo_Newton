@@ -1,0 +1,48 @@
+def sign(x: float) -> int:
+    if x > 0:
+        return 1
+    elif x < 0:
+        return -1
+    else:
+        return 0
+
+from typing import Callable
+
+def bisection(
+    a: float, b: float, *, equation: Callable[[float], float], N: int
+) -> tuple[float, int] | None:
+    i = 1
+    assert a < b, "a not lower than b, the interval is not valid."
+    assert (
+        equation(a) * equation(b) < 0
+    ), "The function does not change sign over the interval."
+    Fa = equation(a)
+    p = a
+    for i in range(N + 1):
+        p = a + (b - a) / 2
+        FP = equation(p)
+        if sign(Fa) * sign(FP) > 0:
+            a = p
+            Fa = FP
+        else:
+            b = p
+    return p, i
+
+p, i = bisection(a=0, b=0.48,
+                equation=lambda x: math.tan(math.pi * x) - 6,
+                N=10)
+print(f"Raíz resultante: {p} en {i} iteraciones")
+#Secante
+p1 = newton(func=lambda x: math.tan(math.pi*x) - 6,
+            x0=0,
+            fprime=lambda x: math.pi*(1/math.cos(math.pi*x))**2,
+            maxiter=10,
+            x1=0.48)
+print(p1)
+#Newton
+p1 = newton(func=lambda x: math.tan(math.pi*x) - 6,
+            x0=0,
+            fprime=lambda x: math.pi*(1/math.cos(math.pi*x))**2,
+            maxiter=10,
+            x1=0.48)
+print(p1)

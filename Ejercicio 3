@@ -1,0 +1,15 @@
+#Literal a
+p1 = newton(func = lambda x : 3*x - math.exp(x), x0 = 1,
+            fprime = lambda x : 3 - math.exp(x), tol = 10e-5, x1 = 2)
+print(p1)
+p1 = newton(func = lambda x : 3*x - math.exp(x), x0 = 1, tol = 10e-5, x1 = 2)
+print(p1)
+
+#Literal b
+p1 = newton(func = lambda x : 2*x + 3*math.cos(x) - math.exp(x),
+            x0 = 1,
+            fprime = lambda x : 2 - 3*math.sin(x) - math.exp(x),
+            tol = 10e-5, x1 = 2)
+print(p1)
+p1 = newton(func = lambda x : 2*x + 3*math.cos(x) - math.exp(x), x0 = 1, tol = 10e-5, x1 = 2)
+print(p1)
